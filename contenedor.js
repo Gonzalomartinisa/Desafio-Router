@@ -28,12 +28,11 @@ class Contenedor{
     }
 
     async deleteById(id){
-        const info = await this.getInfo()
-        const index = info.findIndex(d => d.id == id)
-        const obj = info.splice(index, 1)
-        await this.writeInfo(info)
-        return obj
-    } 
+        let info = await this.getInfo();
+        let obj = info.filter((product) => product.id !== id);
+        await this.writeInfo(obj)
+        return obj    
+    }
 
     async deleteAll(){
         const info = await this.getInfo()
@@ -50,6 +49,14 @@ class Contenedor{
 
     async getAll(){
         const info = await this.getInfo()
+        return info
+    }
+
+    async update(id, obj){
+        let info = await this.getInfo();
+        let index = info.findIndex((pro) => pro.id == id) 
+        info.splice(index, 1, obj)
+        await this.writeInfo(info)
         return info
     }
 

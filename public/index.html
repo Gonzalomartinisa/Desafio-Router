@@ -13,5 +13,19 @@
          <input type="file", name="archivos">
          <input type="submit", value="Subir archivos">
     </form>
+    <br>
+
+    <h2>Productos</h2>
+    <form action="api/productos" method="get" target="_blank">
+        <input type="submit" value="Ver los productos">
+    </form>
+
+    <h3>Agregar productos</h3>
+    <form action="api/productos" method="post" target="_blank">
+        <input type="text" name="title" id="title" placeholder="Titulo">
+        <input type="text" name="price" id="price" placeholder="Precio">
+        <input type="text" name="url" id="url" placeholder="Thumbnail">
+        <input type="submit" value="Agregar">
+    </form>
 </body>
 </html>
