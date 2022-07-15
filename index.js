@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8080
 
 const routerProducts = require('./router/productos.router')
 
-app.use('/api/productos', routerProducts )
+app.use('api/productos', routerProducts )
 
 app.use('/static', express.static('public'))
 

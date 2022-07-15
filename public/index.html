@@ -27,5 +27,17 @@
         <input type="text" name="url" id="url" placeholder="Thumbnail">
         <input type="submit" value="Agregar">
     </form>
+
+    <span></span>
+
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js></script>
+
+    <script>
+        const template = Handlebars.compile('<h1>{{nombre}}</h1>')
+        const info = {nombre: "Gonzalo"}
+        const html = template(info)
+        document.querySelector('span').innerHTML = html
+    </script>
+    
 </body>
 </html>
