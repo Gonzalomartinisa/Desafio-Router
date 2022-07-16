@@ -5,9 +5,6 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 const Contenedor = require('./contenedor');
 
-// app.use('/productos', routerProducts )
-// app.use('/static', express.static('public'))
-
 const pc = new Contenedor('./public/data.txt')
 
 app.set('views', './views');
@@ -27,7 +24,7 @@ app.post('/productos', (req, res) => {
 app.get('/productos', (req, res) => {
     pc.getAll()
         .then(data => res.render('productos', { data }))
-        .then(e => {
+        .catch(e => {
             console.log(e)
             res.send('Error al leer los archivos')
         })
